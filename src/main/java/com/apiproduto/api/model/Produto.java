@@ -1,6 +1,9 @@
 package com.apiproduto.api.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
 
 @Getter
@@ -10,18 +13,16 @@ import lombok.*;
 @EqualsAndHashCode(of = "id")
 @Entity
 public class Produto {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private Double valor;
+    private Double preco;
 
-    public Produto(String nome, Double valor) {
+    public Produto(String nome, Double preco) {
         this.nome = nome;
-        this.valor = valor;
+        this.preco = preco;
     }
-
-    
 
 }
